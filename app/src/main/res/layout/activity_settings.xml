@@ -1,9 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".SettingsActivity">
+<layout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="30dp"
+        tools:context=".settings.SettingsActivity">
+
+        <LinearLayout
+            android:id="@+id/ll_push"
+            style="@style/SettingItemStyle"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+            <TextView
+                android:id="@+id/tv_push"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_push"
+                android:layout_weight="1"
+                />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/sw_push"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_language"
+            style="@style/SettingItemStyle"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_push"
+            app:layout_constraintLeft_toLeftOf="parent">
+            <TextView
+                android:id="@+id/tv_language"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_language"
+                android:layout_weight="1"/>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_language"
+                style="@style/DefaultSpinner"
+                android:layout_height="wrap_content"
+                android:entries="@array/language" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_weight_unit"
+            style="@style/SettingItemStyle"
+            android:layout_width="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_language">
+            <TextView
+                android:id="@+id/tv_weight_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_weight_unit"
+                android:layout_weight="1"/>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_weight_unit"
+                style="@style/DefaultSpinner"
+                android:layout_height="wrap_content"
+                android:entries="@array/weight_unit" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_weight"
+            style="@style/SettingItemStyle"
+            android:layout_width="match_parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_weight_unit"
+            app:layout_constraintLeft_toLeftOf="parent">
+            <TextView
+                android:id="@+id/tv_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_weight"
+                android:layout_weight="1"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_water_unit"
+            style="@style/SettingItemStyle"
+            android:layout_width="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_weight">
+            <TextView
+                android:id="@+id/tv_water_unit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_water_unit"
+                android:layout_weight="1"/>
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/sp_water_unit"
+                style="@style/DefaultSpinner"
+                android:layout_height="wrap_content"
+                android:entries="@array/water_unit"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_cups"
+            style="@style/SettingItemStyle"
+            android:layout_width="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_water_unit">
+            <TextView
+                android:id="@+id/tv_cups"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_cup_volume"
+                android:layout_weight="1"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_cup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_target_water"
+            style="@style/SettingItemStyle"
+            android:layout_width="match_parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_cups">
+            <TextView
+                android:id="@+id/tv_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title_target_water"
+                android:layout_weight="1"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_target"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ok"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

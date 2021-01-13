@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">WaterApplication</string>
+
+    <string name="title_water_unit">Water Unit</string>
+    <string name="title_weight_unit">Weight Unit</string>
+    <string name="title_push">Push</string>
+    <string name="title_weight">Weight</string>
+    <string name="title_cup_volume">Volume of cup</string>
+    <string name="title_language">Language</string>
+    <string name="title_target_water">Target volume of water</string>
+
+    <string-array name="water_unit">
+        <item>ml</item>
+        <item>oz</item>
+    </string-array>
+    <string-array name="language">
+        <item>KOREAN</item>
+        <item>ENGLISH</item>
+    </string-array>
+    <string-array name="weight_unit">
+        <item>kg</item>
+        <item>lb</item>
+    </string-array>
 </resources>

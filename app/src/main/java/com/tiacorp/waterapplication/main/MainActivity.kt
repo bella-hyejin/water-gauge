@@ -1,8 +1,10 @@
-package com.tiacorp.waterapplication
+package com.tiacorp.waterapplication.main
 
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.appcompat.app.AppCompatActivity
@@ -10,12 +12,15 @@ import com.fangxu.allangleexpandablebutton.AllAngleExpandableButton
 import com.fangxu.allangleexpandablebutton.ButtonData
 import com.fangxu.allangleexpandablebutton.ButtonEventListener
 import com.gelitenight.waveview.library.WaveView
+import com.tiacorp.waterapplication.R
+import com.tiacorp.waterapplication.base.BaseActivity
 import com.tiacorp.waterapplication.common.BounceInterpolator
 import com.tiacorp.waterapplication.common.WaveHelper
+import com.tiacorp.waterapplication.settings.SettingsActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
     lateinit var waveHelper: WaveHelper
 
@@ -57,20 +62,20 @@ class MainActivity : AppCompatActivity() {
         val buttonDatas: MutableList<ButtonData> =
             ArrayList()
         val drawable = intArrayOf(
-            R.drawable.round_add_white_48,
-            R.drawable.refresh,
-            R.drawable.mark,
-            R.drawable.settings,
-            R.drawable.heart,
-            R.drawable.search
+                R.drawable.round_add_white_48,
+                R.drawable.refresh,
+                R.drawable.mark,
+                R.drawable.settings,
+                R.drawable.heart,
+                R.drawable.search
         )
         val color = intArrayOf(
-            R.color.main,
-            R.color.orange,
-            R.color.blue,
-            R.color.pink,
-            R.color.yellow,
-            R.color.red
+                R.color.main,
+                R.color.orange,
+                R.color.blue,
+                R.color.pink,
+                R.color.yellow,
+                R.color.red
         )
         for (i in 0..5) {
             val buttonData: ButtonData = if (i == 0) {
@@ -110,5 +115,10 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         waveHelper.start()
 
+    }
+
+    fun goSettings(view: View) {
+        val intent = Intent(this, SettingsActivity::class.java)
+        startActivity(intent)
     }
 }
